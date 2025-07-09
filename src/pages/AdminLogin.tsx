@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../components/ui/button';
@@ -17,7 +18,6 @@ const AdminLogin = () => {
     e.preventDefault();
     setLoading(true);
     
-    // Simple hardcoded admin check for demo
     if (username === 'admin' && password === 'admin123') {
       navigate('/admin/dashboard');
     } else {
@@ -35,64 +35,68 @@ const AdminLogin = () => {
     <div 
       className="min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat relative"
       style={{
-        backgroundImage: `url('/lovable-uploads/7c765988-9b43-4752-85f6-faef66cd424f.png')`
+        backgroundImage: 'url(/lovable-uploads/5a2300a9-e590-42f0-9a9d-df8b27a02794.png)'
       }}
     >
-      {/* Overlay for better readability */}
+      {/* Dark overlay for better readability */}
       <div className="absolute inset-0 bg-black/40"></div>
       
-      <Card className="w-full max-w-md mx-4 relative z-10 bg-white/95 backdrop-blur-sm">
-        <CardHeader className="text-center">
-          <CardTitle className="text-2xl font-bold text-red-600 flex items-center justify-center space-x-2">
+      <Card className="w-full max-w-md mx-4 shadow-xl bg-white/95 backdrop-blur-sm relative z-10">
+        <CardHeader className="text-center pb-6 bg-gradient-to-r from-gray-800 to-gray-900 text-white rounded-t-lg">
+          <CardTitle className="text-2xl font-bold flex items-center justify-center space-x-2">
             <Shield size={28} />
             <span>Admin Login</span>
           </CardTitle>
         </CardHeader>
-        <CardContent>
-          <form onSubmit={handleSubmit} className="space-y-4">
+        <CardContent className="px-8 pb-8 pt-6">
+          <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <Label htmlFor="username">Admin Username</Label>
+              <Label htmlFor="username" className="text-gray-700 font-semibold">Admin Username</Label>
               <Input
                 id="username"
                 type="text"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 placeholder="Enter admin username"
+                className="mt-2 bg-white border-2 border-gray-200 focus:border-gray-500 rounded-lg py-3"
                 required
               />
             </div>
             
             <div>
-              <Label htmlFor="password">Admin Password</Label>
+              <Label htmlFor="password" className="text-gray-700 font-semibold">Admin Password</Label>
               <Input
                 id="password"
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Enter admin password"
+                className="mt-2 bg-white border-2 border-gray-200 focus:border-gray-500 rounded-lg py-3"
                 required
               />
             </div>
 
             {error && (
-              <div className="text-red-600 text-sm text-center">{error}</div>
+              <div className="text-red-600 text-sm text-center bg-red-50 p-4 rounded-lg border border-red-200">
+                {error}
+              </div>
             )}
 
-            <div className="flex space-x-3">
-              <Button
-                type="button"
-                variant="outline"
-                className="flex-1"
-                onClick={handleCancel}
-              >
-                Cancel
-              </Button>
+            <div className="space-y-3">
               <Button
                 type="submit"
-                className="flex-1 bg-red-600 hover:bg-red-700"
+                className="w-full bg-gray-800 hover:bg-gray-900 text-white py-3 rounded-lg font-semibold text-lg shadow-lg"
                 disabled={loading}
               >
                 {loading ? 'Logging in...' : 'Login as Admin'}
+              </Button>
+              <Button
+                type="button"
+                variant="outline"
+                className="w-full bg-white border-2 border-gray-300 text-gray-700 hover:bg-gray-50 py-3 rounded-lg font-semibold"
+                onClick={handleCancel}
+              >
+                Cancel
               </Button>
             </div>
           </form>
