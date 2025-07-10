@@ -197,16 +197,16 @@ const ParentUserManagement: React.FC<ParentUserManagementProps> = ({ onUserCount
         <div className="flex gap-3">
           <div className="flex gap-3 print:hidden">
             <Input
-              placeholder="Search parent users..."
+              placeholder="Search parent.."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-50 h-10 border-gray-200 focus:border-blue-500 focus:ring-blue-500/20 rounded-lg"
+              className="w-40 h-10 border-gray-200 focus:border-blue-500 focus:ring-blue-500/20 rounded-lg"
               />
           </div>
           <Dialog open={openDialog} onOpenChange={setOpenDialog}>
             <DialogTrigger asChild>
               <Button className="bg-blue-600 hover:bg-blue-700 text-white rounded-lg shadow-sm">
-                <Plus className="w-4 h-4 mr-2" />Add Parent
+                <Plus className="w-3 h-4 mr-1" />Add Parent
               </Button>
             </DialogTrigger>
             <DialogContent className="max-w-md w-[95vw] max-h-[95vh] overflow-y-auto bg-white border-gray-100 rounded-xl shadow-lg">
