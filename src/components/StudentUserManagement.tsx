@@ -227,16 +227,16 @@ const StudentUserManagement: React.FC<StudentUserManagementProps> = ({ onUserCou
   return (
     <Card>
       <CardHeader className="flex flex-row items-center justify-between">
-        <CardTitle>Student Users</CardTitle>
+        <CardTitle>Students</CardTitle>
         <div className="flex gap-2">
           <Button onClick={exportToCSV} variant="outline" size="sm">
-            <Download className="w-4 h-4 mr-2" />
+            <Download className="w-3 h-4 mr-2" />
             Export CSV
           </Button>
           <Dialog open={openDialog} onOpenChange={setOpenDialog}>
             <DialogTrigger asChild>
               <Button>
-                <Plus className="w-4 h-4 mr-2" /> Add Student
+                <Plus className="w-4 h-4 mr-2" />Add Student
               </Button>
             </DialogTrigger>
             <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto bg-white border border-gray-200 shadow-2xl">

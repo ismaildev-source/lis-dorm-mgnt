@@ -110,13 +110,13 @@ const AdminUserManagement: React.FC<AdminUserManagementProps> = ({ onUserCountCh
             size="sm"
             className="border-gray-200 text-gray-700 hover:bg-gray-50 rounded-lg"
           >
-            <Download className="w-4 h-4 mr-2" />
-            Export CSV
+            <Download className="w-3 h-4 mr-2" />
+           Export CSV
           </Button>
           <Dialog open={openDialog} onOpenChange={setOpenDialog}>
             <DialogTrigger asChild>
               <Button className="bg-blue-600 hover:bg-blue-700 text-white rounded-lg shadow-sm">
-                <Plus className="w-4 h-4 mr-2" /> Add Admin
+                <Plus className="w-3 h-3 mr-2" />Add Admin
               </Button>
             </DialogTrigger>
             <DialogContent className="max-w-md bg-white border-gray-100 rounded-xl shadow-lg">

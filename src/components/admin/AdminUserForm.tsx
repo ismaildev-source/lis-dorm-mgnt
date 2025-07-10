@@ -97,7 +97,7 @@ const AdminUserForm: React.FC<AdminUserFormProps> = ({
           onClick={onSubmit} 
           className="w-full h-12 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg shadow-sm transition-colors"
         >
-          {isEditing ? 'Update Admin User' : 'Add Admin'}
+          {isEditing ? 'Update Admin User':'Add Admin'}
         </Button>
       </div>
     </div>

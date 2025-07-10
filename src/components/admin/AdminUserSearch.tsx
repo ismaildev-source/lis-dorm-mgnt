@@ -15,7 +15,7 @@ const AdminUserSearch: React.FC<AdminUserSearchProps> = ({
   return (
     <div className="mb-4 print:hidden">
       <div className="relative">
-        <Search className="absolute left-2 top-2.5 h-4 w-4 text-muted-foreground" />
+        <Search className="absolute left-2 top-2.5 h-4 w-3 text-muted-foreground" />
         <Input
           placeholder="Search admin users..."
           value={searchTerm}
