@@ -8,7 +8,6 @@ import { Eye, EyeOff } from 'lucide-react';
 
 type GenderType = 'Male' | 'Female';
 
-
 interface AdminFormData {
   name: string;
   username: string;

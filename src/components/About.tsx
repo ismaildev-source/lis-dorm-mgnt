@@ -18,12 +18,12 @@ const About = () => {
           <div className="space-y-8">
             <div>
               <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                About DormHub
+                About LIS Dorm Karen
               </h2>
               <div className="space-y-4 text-lg text-gray-600 leading-relaxed">
                 <p>
-                  DormHub is the leading dormitory management platform designed to streamline operations 
-                  and enhance the living experience for students, parents, and administrators alike.
+                  LIS Dorm Karen is the leading Dormitory prep attendance platform designed to streamline operations 
+                  and enhance the prep experience for students.
                 </p>
                 <p>
                   Our comprehensive solution combines cutting-edge technology with user-friendly design 
@@ -40,8 +40,8 @@ const About = () => {
             <div className="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-600">
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Our Mission</h3>
               <p className="text-gray-700">
-                To provide innovative, reliable, and user-friendly dormitory management solutions 
-                that enhance the residential experience and simplify administrative tasks.
+                To provide innovative, reliable, and user-friendly dormitory prep attendance solutions 
+                that enhance the prep attendance experience and simplify administrative tasks.
               </p>
             </div>
           </div>

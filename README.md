@@ -1,4 +1,4 @@
-# Welcome to your Dorm Prep Attendance project
+# Welcome to your LIS Dorm Prep Attendance project
 
 ## Project info
 
