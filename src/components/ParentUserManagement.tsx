@@ -191,20 +191,22 @@ const ParentUserManagement: React.FC<ParentUserManagementProps> = ({ onUserCount
   return (
     <Card className="bg-white border-gray-100 rounded-xl shadow-sm">
       <CardHeader className="flex flex-row items-center justify-between bg-gray-50/50 rounded-t-xl">
-        <CardTitle className="text-xl font-semibold text-gray-800">Parents</CardTitle>
+
+        
+
         <div className="flex gap-3">
           <div className="flex gap-3 print:hidden">
             <Input
               placeholder="Search parent users..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-64 h-10 border-gray-200 focus:border-blue-500 focus:ring-blue-500/20 rounded-lg"
-            />
+              className="w-50 h-10 border-gray-200 focus:border-blue-500 focus:ring-blue-500/20 rounded-lg"
+              />
           </div>
           <Dialog open={openDialog} onOpenChange={setOpenDialog}>
             <DialogTrigger asChild>
               <Button className="bg-blue-600 hover:bg-blue-700 text-white rounded-lg shadow-sm">
-                <Plus className="w-4 h-4 mr-2" /> Add Parent
+                <Plus className="w-4 h-4 mr-2" />Add Parent
               </Button>
             </DialogTrigger>
             <DialogContent className="max-w-md w-[95vw] max-h-[95vh] overflow-y-auto bg-white border-gray-100 rounded-xl shadow-lg">
