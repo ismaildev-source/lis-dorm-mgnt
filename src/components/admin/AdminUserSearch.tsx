@@ -20,7 +20,7 @@ const AdminUserSearch: React.FC<AdminUserSearchProps> = ({
           placeholder="Search admin users..."
           value={searchTerm}
           onChange={(e) => onSearchChange(e.target.value)}
-          className="pl-5"
+          className="w-40 h-10 pl-5"
         />
       </div>
     </div>

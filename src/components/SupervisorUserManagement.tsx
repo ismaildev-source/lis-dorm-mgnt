@@ -3,7 +3,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogTrigger } from '@/components/ui/dialog';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Plus, Download } from 'lucide-react';
+import { Plus } from 'lucide-react';
 import { useToast } from '@/components/ui/use-toast';
 import SupervisorUserForm from './supervisors/SupervisorUserForm';
 import SupervisorUserTable from './supervisors/SupervisorUserTable';
@@ -25,9 +25,15 @@ interface SupervisorUser {
 
 interface SupervisorUserManagementProps {
   onUserCountChange: () => void;
+  showHeaderControls?: boolean;
+  renderCustomHeader?: (onExportCSV: () => void) => React.ReactNode;
 }
 
-const SupervisorUserManagement: React.FC<SupervisorUserManagementProps> = ({ onUserCountChange }) => {
+const SupervisorUserManagement: React.FC<SupervisorUserManagementProps> = ({ 
+  onUserCountChange,
+  showHeaderControls = true,
+  renderCustomHeader 
+}) => {
   const { toast } = useToast();
   const [supervisorUsers, setSupervisorUsers] = useState<SupervisorUser[]>([]);
   const [filteredUsers, setFilteredUsers] = useState<SupervisorUser[]>([]);
@@ -189,26 +195,38 @@ const SupervisorUserManagement: React.FC<SupervisorUserManagementProps> = ({ onU
 
   return (
     <Card className="bg-white border-gray-100 rounded-xl shadow-sm">
-      <CardHeader className="flex flex-row items-center justify-between bg-gray-50/50 rounded-t-xl">
+      {showHeaderControls && (
+        <CardHeader className="flex flex-row items-center justify-between bg-gray-50/50 rounded-t-xl">
+          <CardTitle className="text-xl font-semibold text-gray-800">Supervisors</CardTitle>
+          <div className="flex gap-3">
+            <Dialog open={openDialog} onOpenChange={setOpenDialog}>
+              <DialogTrigger asChild>
+                <Button className="bg-blue-600 hover:bg-blue-700 text-white rounded-lg shadow-sm">
+                  <Plus className="w-4 h-4 mr-2" /> Add Supervisor
+                </Button>
+              </DialogTrigger>
+            </Dialog>
+          </div>
+        </CardHeader>
+      )}
 
-        
+      {renderCustomHeader && renderCustomHeader(exportToCSV)}
 
-        <div className="flex gap-3">
-          <Dialog open={openDialog} onOpenChange={setOpenDialog}>
-            <DialogTrigger asChild>
-              <Button className="bg-blue-600 hover:bg-blue-700 text-white rounded-lg shadow-sm">
-                <Plus className="w-4 h-4 mr-2" /> Add Supervisor
-              </Button>
-            </DialogTrigger>
-          </Dialog>
-        </div>
-      </CardHeader>
       <CardContent className="p-6">
-        <div className="mb-6">
+        <div className="mb-6 flex justify-between items-center gap-4">
           <SupervisorUserSearch 
             searchTerm={searchTerm}
             onSearchChange={setSearchTerm}
           />
+          {!showHeaderControls && (
+            <Dialog open={openDialog} onOpenChange={setOpenDialog}>
+              <DialogTrigger asChild>
+                <Button className="bg-blue-600 hover:bg-blue-700 text-white rounded-lg shadow-sm">
+                  <Plus className="w-4 h-4 mr-2" /> Add Supervisor
+                </Button>
+              </DialogTrigger>
+            </Dialog>
+          )}
         </div>
 
         <SupervisorUserTable 
